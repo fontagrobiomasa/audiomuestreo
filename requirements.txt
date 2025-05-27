@@ -1,3 +1,4 @@
 streamlit
-numpy
+torch==2.0.1
 openai-whisper==20231106
+pydub
