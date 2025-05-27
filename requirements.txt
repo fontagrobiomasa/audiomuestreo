@@ -1,4 +1,4 @@
 streamlit
 numpy
-openai-whisper
+openai-whisper==20231106
 ffmpeg-python
