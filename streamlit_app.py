@@ -15,8 +15,11 @@ st.markdown(
     """
 )
 
-# Cargar archivo de audio
-audio_file = st.file_uploader("Subí un archivo de audio (wav, mp3, m4a, etc.)", type=["wav", "mp3", "m4a", "ogg"])
+# Cargar archivo de audio (agregado .opus)
+audio_file = st.file_uploader(
+    "Subí un archivo de audio (wav, mp3, m4a, ogg, opus)",
+    type=["wav", "mp3", "m4a", "ogg", "opus"]
+)
 
 # Selección de idioma
 lang = st.selectbox("Seleccioná el idioma del audio:", ["es", "en", "pt", "fr", "de"])
