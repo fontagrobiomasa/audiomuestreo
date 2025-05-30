@@ -53,15 +53,19 @@ if audio_files and st.button("Transcribir todos"):
                         alturas_array = np.array(alturas)
                         promedio = np.mean(alturas_array)
                         desvio = np.std(alturas_array)
+                        minimo = np.min(alturas_array)
+                        maximo = np.max(alturas_array)
                         n = len(alturas_array)
                     else:
-                        promedio = desvio = n = 0
+                        promedio = desvio = minimo = maximo = n = 0
 
                     resultados.append({
                         "Archivo": audio_file.name,
                         "N": n,
                         "Promedio": round(promedio, 2),
-                        "Desvío estándar": round(desvio, 2)
+                        "Desvío estándar": round(desvio, 2),
+                        "Mínimo": round(minimo, 2),
+                        "Máximo": round(maximo, 2)
                     })
 
                 except Exception as e:
@@ -69,7 +73,9 @@ if audio_files and st.button("Transcribir todos"):
                         "Archivo": audio_file.name,
                         "N": "Error",
                         "Promedio": "-",
-                        "Desvío estándar": f"{e}"
+                        "Desvío estándar": f"{e}",
+                        "Mínimo": "-",
+                        "Máximo": "-"
                     })
 
                 finally:
